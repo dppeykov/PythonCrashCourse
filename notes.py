@@ -29,6 +29,15 @@
 # If the implementation is easy to explain, it may be a good idea.
 # Namespaces are one honking great idea -- let's do more of those!
 
+####################################################################################
+# STYLING CONVENTION
+#################################################################################### 
+
+# Python Enhancement Proposal (PEP) - PEP 8
+# Indentation - 4 spaces -> don't mix spaces and tabs
+# Line Length - less than 80 chars recommended / comments = 72 chars per line
+# Blank Lines - use to organize the code
+
 
 ####################################################################################
 # VARIABLES
@@ -126,5 +135,83 @@ print(cars)
 print("len(cars):", len(cars))
 
 ####################################################################################
-# LISTS - LOOPING
+# LISTS - LOOPING & LIST COMPREHENSIONS
 ####################################################################################
+
+magicians = ['alice', 'david', 'carolina']
+for magician in magicians:  # don't forget the colon
+    print(f"{magician.title()}, that was a great trick!")   # remember the indentation
+    print(f"I can't wait to see your next trick, {magician.title()}.\n")
+print("Thank you, everyone. That was a great magic show!")
+
+for value in range(1, 5): # upper limit is not inclusive - will stop at 4
+    print(value)
+# range(6) -->> 0,1,2,3,4,5
+
+# creating a list with range -->> range(lower, upper, step)
+even_numbers = list(range(2, 11, 2))
+print(even_numbers) # [2, 4, 6, 8, 10]
+
+# statistics
+digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+print(min(digits))
+print(max(digits))
+print(sum(digits))
+
+# List comprehencions
+squares = []
+
+for value in range(1, 11):
+    square = value ** 2
+    squares.append(square)
+
+print(squares) # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# list comprehensions --> creates new elements using the for loop and automatically appends them to a list
+squares = [value**2 for value in range(1, 11)]
+print(squares)  # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+####################################################################################
+# LISTS - SLICING [begin:end:skip] & COPY
+####################################################################################
+
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
+print(players[0:3]) # 3 not inclusive --> ['charles', 'martina', 'michael']
+# print(players[:3]) # same as above - starts from the beginning = 0
+print(players[-3:]) # starts from -3 and goes to the end --> ['michael', 'florence', 'eli']
+
+my_foods = ['pizza', 'falafel', 'carrot cake']
+friend_foods = my_foods[:]
+# NOTE: friend_foods = my_foods -->> mutable - will set friend_foods pointer to the existing my_foods list
+
+print("My favorite foods are:")
+print(my_foods)
+print("\nMy friend's favorite foods are:")
+print(friend_foods)
+
+
+####################################################################################
+# TUPLES
+####################################################################################
+
+# List of items that can't be changed = immutable
+# Although you can’t modify a tuple, you can assign a new value to a variable that represents a tuple
+# Use them when you want to store a set of values that should not be changed throughout the life of a program
+# Tuples are iterables, so you can loop through them
+
+dimensions = (200, 50)
+print(dimensions[0])
+print(dimensions[1])
+
+# dimensions[0] = 250 # TypeError: 'tuple' object does not support item assignment
+
+print("Original dimensions:")
+for dimension in dimensions:
+    print(dimension)
+
+dimensions = (400, 100) # we can assign a new value to the tuple variable
+print("\nModified dimensions:")
+for dimension in dimensions:
+    print(dimension)
+
+my_t = (3,) # tuple with 1 element
