@@ -384,3 +384,47 @@ while current_number < 10:
 ####################################################################################
 # FUNCTIONS
 ####################################################################################
+
+def greet_user():
+    """Display a simple greeting."""
+    print("Hello")
+
+greet_user()
+
+# Docstrings are enclosed in triple quotes, which Python looks for when it generates documentation for the functions 
+
+def greet_user(username): # here username is a PARAMETER (in the definition)
+    """Display a simple greeting."""
+    print(f"Hello, {username.title()}!")
+
+greet_user('jesse') # here jesse is an ARGUMENT (in the function call -->> gets passed as a parameter to the function)
+
+# You can pass arguments to your functions in a number of ways:
+#  You can use positional arguments, which need to be in the same order the parameters were written; 
+#  keyword arguments, where each argument consists of a variable name and a value; 
+#  and lists and dictionaries of values.
+
+# Positional arguments
+
+def describe_pet(animal_type, pet_name): # positional arguments - the order matters
+    """Display information about a pet."""
+    print(f"\nI have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name.title()}.")
+
+describe_pet('hamster', 'harry') # positional arguments - good to follow the same order
+
+# Keyword arguments - key-value pair - avoids the confusion with the positions
+
+describe_pet(animal_type='dog', pet_name='rex') # in that way the order doesn't matter - the correct values will be passed to the function
+# NOTE: IMPORTANT - When you use keyword arguments, be sure to use the exact names of the parameters in the function’s definition.
+
+# Defaul values
+def describe_pet_2(pet_name, animal_type='dog'): # ALWAYS list the parameters that have default values at the end
+    """Display information about a pet."""
+    print(f"\nI have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name.title()}.")
+
+describe_pet_2(pet_name='willie')
+
+# When you use default values, any parameter with a default value needs to be listed after all the parameters that don’t have default values.
+#  This allows Python to continue interpreting positional arguments correctly.
