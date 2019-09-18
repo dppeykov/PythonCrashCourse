@@ -84,3 +84,43 @@ print(universe_age) # 14000000000
 ####################################################################################
 # LISTS
 ####################################################################################
+
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+print(bicycles)
+print(bicycles[0])  # the indexes start at 0
+print(bicycles[-1])
+print(bicycles[::-1])  # reversing the list --> ['specialized', 'redline', 'cannondale', 'trek'] --> temp
+bicycles.reverse() # reversing with method --> perm
+print(bicycles)
+
+# Changing values
+motorcycles = ['honda', 'yamaha', 'suzuki']
+print("Original: ", motorcycles)
+motorcycles[0] = 'CHANGE'
+
+# Add (append(el)) / Insert (insert(inx, el)) / Delete (del list[inx]) / Remove (pop(inx) & remove(value) / sort()
+motorcycles.append('APPEND')
+
+motorcycles.insert(0, 'INDEX')
+print("After CHANGE, APPEND, INDEX: ", motorcycles)
+
+del motorcycles[0]  # deletes the element at 0 -> if we want to delete an element and not use it again (otherwise use pop())
+print("After DEL: ", motorcycles)
+
+popped_motorcycle = motorcycles.pop() # without index provided, the pop method will return the last element in a list
+print("Popping the last element into a variable: ", popped_motorcycle)
+
+motorcycles.remove('suzuki') # removing by value - removes only the first occurence
+
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print("Original: ", cars)
+print("Temp with sorted:", sorted(cars)) # sorts the list temporary
+print("After temp: ", cars)
+
+cars.sort() # sorts the list permanently
+print("Sort() = perm: ", cars)
+
+cars.sort(reverse=True) # sorting in reverse order
+print(cars)
+
+print("len(cars):", len(cars))
