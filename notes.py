@@ -10,13 +10,21 @@ print(message)
 
 # STRINGS
 string_descr = "could be with ' or \" or \"\"\" for docstrings"
+
+# Some string methods - title(), upper(), lower(), rstrip()
 print("clear:", string_descr)
 print("title() - capitalizing every word's first letter:", string_descr.title())
 print("upper() - capitalizing all the words:", string_descr.upper())
 print("lower() - lowercase:", string_descr.lower())
+
+with_space = "   S P A C E S    "
+with_space          # '   S P A C E S    '
+with_space.strip() # 'S P A C E S' -->> removes the extra spaces --> for removing the spaces on the right - rstrip() or left lstrip()
 
 # f-strings - python 3.6+
 first_name = "ada"
 last_name = "lovelace"
 print(f"F-string: Hello, {first_name.title()} {last_name.title()}!")
 print("Format method: Hello, {} {}!".format(first_name.title(), last_name.title()))
+
+# Fomatting - \t = tab, \n = new line
