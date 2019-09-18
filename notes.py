@@ -83,7 +83,7 @@ print("Format method: Hello, {} {}!".format(first_name.title(), last_name.title(
 # NUMBERS
 ####################################################################################
 # integers & floats
-# add (+), subtract (-), multiply (*), divide (/), exponent/power (**)
+# add (+), subtract (-), multiply (*), divide (/), exponent/power (**), module (%)
 # floats - any number with a decimal point - if float in the operation, the result is float
 
 universe_age = 14_000_000_000 # can use _ to represent large numbers - python 3.6+
@@ -318,6 +318,7 @@ for language in favorite_languages.values():
     print(language)
 
 # NOTE: we can nest lists in a dictionary, dictionaries in lists and so on - to get to the values just combine the technics for the lists and dictionaries
+# You should not nest lists and dictionaries too deeply - if needed, most probably a better solution exists
 
 ####################################################################################
 # SETS
@@ -330,3 +331,56 @@ set(favorite_languages.values()) # {'ruby', 'c', 'python'} -->> a set is also it
 # It’s easy to mistake sets for dictionaries because they’re both wrapped in braces.
 # When you see braces but no key-value pairs, you’re probably looking at a set. 
 # Unlike lists and dictionaries, sets do not retain items in any specific order.
+
+####################################################################################
+# INPUT
+####################################################################################
+
+# Write clear prompts - explain well what needs to be entered
+
+message = input("Tell me something, and I will repeat it back to you: ")
+print(message) # repeats the message
+
+# a way to do a prompt on several lines
+prompt = "If you tell us who you are, we can personalize the messages you see."
+prompt += "\nWhat is your first name? "
+name = input(prompt)
+print(f"\nHello, {name}!")
+
+# NOTE: the input returns a string - we can change it with int() for example if needed
+
+
+####################################################################################
+# WHILE LOOP + break + continue
+####################################################################################
+
+current_number = 1
+while current_number <= 5:
+    print(current_number)
+    current_number += 1
+
+# The break statement directs the flow of your program; you can use it to control
+# which lines of code are executed and which aren’t, so the program only
+# executes code that you want it to, when you want it to
+
+# You can use the break statement in any of Python’s loops.
+
+# Rather than breaking out of a loop entirely without executing the rest of its
+# code, you can use the continue statement to return to the beginning of the
+# loop based on the result of a conditional test.
+
+current_number = 0
+while current_number < 10:
+    current_number += 1
+    if current_number % 2 == 0:
+        continue
+    print(current_number)  # prints 1 3 5 7 9 (%2 != 0)
+
+# NOTE: ALWAYS BE VERY CAREFUL NOT TO CAUSE A INFINITE LOOP
+
+# The while loop can be used for moving a data between lists, 
+# removing all instances of a specific value from a list, filling a dictionary with user input and so on
+
+####################################################################################
+# FUNCTIONS
+####################################################################################
