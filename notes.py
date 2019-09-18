@@ -215,3 +215,46 @@ for dimension in dimensions:
     print(dimension)
 
 my_t = (3,) # tuple with 1 element
+
+####################################################################################
+# CONDITIONALS
+####################################################################################
+
+# if conditional_test:
+#     do something
+# elif another_conditional_test:  # once a match is found the rest of the elif statements are not checked 
+#     do something else 
+# ...
+# else:    # catch all statement
+#     do something different  
+
+cars = ['audi', 'bmw', 'subaru', 'toyota']
+
+for car in cars:
+    if car == 'bmw':
+        print(car.upper())
+    else:
+        print(car.title())
+
+#  = --> assign / == --> is equal / != --> is not equal / <=, >= --> less/greater than or equal 
+# and / or / not -->> python is using the whole words 
+
+# in / not in - checking for a value in or not in a data structure (lsit in this case)
+requested_toppings = ['mushrooms', 'onions', 'pineapple']
+'mushrooms' in requested_toppings # True
+'mushrooms' not in requested_toppings # False
+
+# If you want only one block of code to run, use an if-elifelse chain. 
+# If more than one block of code needs to run, use a series of independent if statements.
+
+# Multiple lists and conditionals - example:
+available_toppings = ['mushrooms', 'olives', 'green peppers', 'pepperoni', 'pineapple', 'extra cheese']
+requested_toppings = ['mushrooms', 'french fries', 'extra cheese']
+
+for requested_topping in requested_toppings:
+    if requested_topping in available_toppings:
+        print(f"\nAdding {requested_topping}.")
+    else:
+        print(f"Sorry, we don't have {requested_topping}.")
+
+print("\nFinished making your pizza!")
