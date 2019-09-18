@@ -301,7 +301,7 @@ for key, value in alien.items():  # could be only k,v
 for key in alien.keys():
     print(key.title()) # title() makes the first letter capital
 
-# Looping in order through the keys
+# Looping in order through the keys & values --> NOTE: keys() and values() return a list of the keys/values
 
 favorite_languages = {
     'jen': 'python',
@@ -313,6 +313,20 @@ favorite_languages = {
 for name in sorted(favorite_languages.keys()):
     print(f"{name.title()}, thank you for taking the poll.") # Edward, thank you for taking the poll. ... going through all the names(keys)
 
-
+# looping through all the values from a dictionary
 for language in favorite_languages.values():
     print(language)
+
+# NOTE: we can nest lists in a dictionary, dictionaries in lists and so on - to get to the values just combine the technics for the lists and dictionaries
+
+####################################################################################
+# SETS
+####################################################################################
+
+# A set is a collection in which each item must be unique
+
+set(favorite_languages.values()) # {'ruby', 'c', 'python'} -->> a set is also iterable, so we can loop through it
+
+# It’s easy to mistake sets for dictionaries because they’re both wrapped in braces.
+# When you see braces but no key-value pairs, you’re probably looking at a set. 
+# Unlike lists and dictionaries, sets do not retain items in any specific order.
